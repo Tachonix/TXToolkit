@@ -2,6 +2,7 @@ package com.tachonix;
 
 import com.tachonix.commands.DayCommand;
 import com.tachonix.hud.DayHUD;
+import com.tachonix.inputs.KeyBinds;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
@@ -16,6 +17,7 @@ public class TXToolkit implements ModInitializer {
 	@Override
 	public void onInitialize() {
 
+		KeyBinds.RegisterKeyBinds();
 		registerCommands();
 		HudRenderCallback.EVENT.register(new DayHUD());
 
@@ -25,4 +27,5 @@ public class TXToolkit implements ModInitializer {
 	private static void registerCommands(){
 		CommandRegistrationCallback.EVENT.register(DayCommand::register);
 	}
+
 }
