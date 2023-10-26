@@ -17,6 +17,9 @@
 	"entrypoints": {
 		"main": [
 			"com.tachonix.TXToolkit"
+		],
+		"client": [
+			"com.tachonix.TXToolkitClient"
 		]
 	},
 	"mixins": [

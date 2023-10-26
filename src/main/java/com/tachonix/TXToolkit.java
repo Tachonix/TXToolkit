@@ -1,7 +1,6 @@
 package com.tachonix;
 
 import com.tachonix.commands.DayCommand;
-import com.tachonix.gui.CustomScreen;
 import com.tachonix.hud.DayHUD;
 import com.tachonix.inputs.KeyBinds;
 import net.fabricmc.api.ModInitializer;

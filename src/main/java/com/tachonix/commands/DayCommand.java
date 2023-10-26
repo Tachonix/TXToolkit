@@ -27,8 +27,8 @@ public class DayCommand {
         source.sendMessage(Text.literal("Days Survived: " + currentDay));
         return 1;
     }
-    private static int runTestCMD(CommandContext<ServerCommandSource> context){
-        MinecraftClient.getInstance().setScreen(new CustomScreen());
+    private static int runTestCMD(CommandContext<ServerCommandSource> context) {
+        MinecraftClient.getInstance().execute(() -> MinecraftClient.getInstance().setScreen(new CustomScreen()));
         return 1;
     }
 }
