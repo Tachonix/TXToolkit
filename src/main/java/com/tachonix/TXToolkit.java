@@ -1,6 +1,7 @@
 package com.tachonix;
 
 import com.tachonix.commands.DayCommand;
+import com.tachonix.gui.CustomScreen;
 import com.tachonix.hud.DayHUD;
 import com.tachonix.inputs.KeyBinds;
 import net.fabricmc.api.ModInitializer;
@@ -25,7 +26,9 @@ public class TXToolkit implements ModInitializer {
 	}
 
 	private static void registerCommands(){
-		CommandRegistrationCallback.EVENT.register(DayCommand::register);
+		CommandRegistrationCallback.EVENT.register(DayCommand::registerDayCMD);
+		CommandRegistrationCallback.EVENT.register(DayCommand::registerTestCMD);
 	}
+
 
 }
