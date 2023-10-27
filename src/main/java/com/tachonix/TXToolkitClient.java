@@ -1,6 +1,5 @@
 package com.tachonix;
 
-import com.tachonix.gui.CustomScreen;
 import com.tachonix.inputs.KeyBinds;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
@@ -14,7 +13,9 @@ public class TXToolkitClient implements ClientModInitializer {
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             while (KeyBinds.settingsKeyBind.wasPressed()) {
                 MinecraftClient.getInstance().execute(() -> {
+                    /* Replace CustomScreen()
                     MinecraftClient.getInstance().setScreen(new CustomScreen());
+                     */
                 });
             }
         });

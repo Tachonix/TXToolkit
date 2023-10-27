@@ -2,8 +2,10 @@ package com.tachonix.commands;
 
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.context.CommandContext;
-import com.tachonix.gui.CustomScreen;
+import com.tachonix.gui.SettingsGUI;
+import com.tachonix.inputs.KeyBinds;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.command.CommandRegistryAccess;
 import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.command.ServerCommandSource;
@@ -28,7 +30,15 @@ public class DayCommand {
         return 1;
     }
     private static int runTestCMD(CommandContext<ServerCommandSource> context) {
-        MinecraftClient.getInstance().execute(() -> MinecraftClient.getInstance().setScreen(new CustomScreen()));
+        ServerCommandSource source = context.getSource();
+        // Input any methods or code to test here
+        Screen settingsGUI = SettingsGUI.OpenGUI().build();
+        while (KeyBinds.settingsKeyBind.wasPressed()) {
+            MinecraftClient.getInstance().execute(() -> {
+                    MinecraftClient.getInstance().setScreen(settingsGUI);
+            });
+        }
+        source.sendMessage(Text.literal("Routine Complete"));
         return 1;
     }
 }

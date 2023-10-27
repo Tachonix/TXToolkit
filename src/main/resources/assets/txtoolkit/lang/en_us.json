@@ -1,6 +1,9 @@
 {
 
   "category.tachonix.txtoolkit": "TX Toolkit",
+  "category.tachonix.general": "Category 1",
+
+  "title.tachonix.SettingsGUI": "TX Toolkit Settings",
 
   "key.tachonix.settings": "Settings",
   "key.tachonix.zoom1": "Zoom Level 1",
